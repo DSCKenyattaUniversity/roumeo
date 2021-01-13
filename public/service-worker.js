@@ -1,5 +1,5 @@
 // cash name
-const CACHE_NAME = 'CACHE-1';
+const CACHE_NAME = 'CACHE-2';
 const toCache = [
   '/',
   '/?',
@@ -21,6 +21,7 @@ const toCache = [
   '/images/favicon-16x16.png',
   '/images/favicon-32x32.png',
   '/images/favicon-96x96.png',
+  '/images/pencil-152713_1280.png'
 ];
 
 self.addEventListener('install', function (event) {
