@@ -1,5 +1,5 @@
 // cash name
-const CACHE_NAME = 'CACHE-7';
+const CACHE_NAME = 'CACHE-1';
 const toCache = [
   '/',
   '/?',
