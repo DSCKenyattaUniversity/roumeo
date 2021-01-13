@@ -1,0 +1,23 @@
+{
+  "name": "romeo",
+  "version": "1.0.0",
+  "description": "PWA biginner model ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiambati-maxwel/romeo.git"
+  },
+  "author": "Kiambati Maxwel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiambati-maxwel/romeo/issues"
+  },
+  "homepage": "https://github.com/kiambati-maxwel/romeo#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7"
+  }
+}
