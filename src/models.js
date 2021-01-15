@@ -1,29 +1,29 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const letterSchema = new Schema({
   letter: {
     type: String,
-    required: true
+    required: true,
   },
   timeStamp: {
     type: Date,
-    required: true
+    required: true,
   },
   from: {
     type: String,
-    required: true
+    required: true,
   },
   to: {
     type: String,
-    required: true
+    required: true,
   },
   secret: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
-const Letter = mongoose.model('Letter', letterSchema);
+const Letter = mongoose.model("Letter", letterSchema);
 
 module.exports = Letter;

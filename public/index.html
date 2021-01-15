@@ -1,107 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roumeo</title>
+    <meta name="theme-color" content="#D3D1D2" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/images/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/images/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/images/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/images/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/images/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/images/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/images/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/images/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/images/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/images/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <meta name="msapplication-TileColor" content="#D3D1D2" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <link rel="manifest" href="/scripts/pwa.webmanifest" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <base href="/" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>roumeo</title>
-  <meta name="theme-color" content="#D3D1D2" />
-  <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"
-    href="/images/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <meta name="msapplication-TileColor" content="#D3D1D2">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <link rel="manifest" href="/scripts/pwa.webmanifest">
-  <link rel="stylesheet" href="/styles/index.css">
-  <base href="/">
-</head>
+  <body>
+    <!-- authentication section  -->
+    <section id="register-section" tabindex="-1">
+      <button id="delete-account">🗑️ account</button>
+      <form id="register">
+        <input
+          class="auth-inputs"
+          id="register-input"
+          required
+          type="text"
+          placeholder="User Name"
+          autofocus
+        />
+        <br />
+        <br />
+        <input
+          class="auth-inputs"
+          id="secret-input"
+          type="password"
+          placeholder="Password"
+          required
+        />
+        <br />
+        <input type="submit" value="Register" />
+      </form>
+    </section>
 
-<body>
+    <section id="to" class="toggle-display">
+      <form>
+        <input type="text" placeholder="write to ..." required />
+        <br />
+        <input type="submit" />
+      </form>
+      <br />
+      <br />
+      <br />
+      <a href="/" style="font-size: 1.5rem">back</a>
+    </section>
 
-  <!-- authentication section  -->
-  <section id="register-section" tabindex="-1">
-    <button id="delete-account">🗑️ account</button>
-    <form id="register">
-      <input class="auth-inputs" id="register-input" required type="text"
-        placeholder="User Name" autofocus>
-      <br>
-      <br>
-      <input class="auth-inputs" id="secret-input" type="password"
-        placeholder="Password" required>
-      <br>
-      <input type="submit" value="Register">
-    </form>
+    <div class="main-container">
+      <!-- date the letter was written-->
+      <p id="date">2/6/2020</p>
 
-  </section>
+      <!-- letter section -->
+      <div class="container">
+        <textarea
+          name="textarea"
+          disabled
+          contenteditable="false"
+          id="text-area"
+          cols="30"
+          rows="10"
+        > Fetching Letters ... </textarea
+        >
+      </div>
 
-  <section id="to" class="toggle-display">
-    <form>
-      <input type="text" placeholder="write to ..." required>
-      <br>
-      <input type="submit">
-    </form>
-    <br>
-    <br>
-    <br>
-    <a href="/" style="font-size: 1.5rem;">back</a>
-  </section>
+      <!-- write letter form -->
+      <form method="POST" id="send-letter-form" class="toggle-display">
+        <textarea
+          name="letter"
+          required
+          id="write-letter"
+          cols="30"
+          rows="12"
+        ></textarea>
+        <br />
+        <input type="submit" value="send" />
+      </form>
 
-  <div class="main-container">
+      <!-- search form -->
+      <form
+        id="search-letter-form"
+        style="display: none"
+        class="toggle-display"
+      >
+        <input type="date" required />
+        <br />
+        <input type="submit" value="search" />
+      </form>
 
-    <!-- date letter was written-->
-    <p id="date">2/6/2020</p>
+      <!-- next before, search, create and dot btns -->
+      <div id="my-letters" class="toggle-display">
+        <button><input type="checkbox" name="myletters-btn" /></button>
+        <br />
+        <p for="myletters-btn">sent</p>
+      </div>
 
-    <!-- letter section -->
-    <div class="container">
-      <textarea name="textarea" disabled contenteditable="false" id="text-area"
-        cols="30" rows="10">fetching letters ...</textarea>
+      <button id="next" class="toggle-display">
+        <img src="/images/baseline_navigate_next_black_18dp.png" alt="" />
+      </button>
+      <button id="before" class="toggle-display">
+        <img src="/images/baseline_navigate_before_black_18dp.png" alt="" />
+      </button>
+      <button id="search-dialog-btn" class="toggle-display">
+        <img src="/images/baseline_search_black_18dp2.png" alt="" />
+      </button>
+      <button id="create-dialog-btn" class="toggle-display">
+        <img src="/images/baseline_create_black_18dp2.png" alt="" />
+      </button>
+      <button class="button-dot"></button>
     </div>
-
-    <!-- write letter form -->
-    <form method="POST" id="send-letter-form" class="toggle-display">
-      <textarea name="letter" required id="write-letter" cols="30"
-        rows="12"></textarea>
-      <br>
-      <input type="submit" value="send">
-    </form>
-
-    <!-- search form -->
-    <form id="search-letter-form" style="display: none;" class="toggle-display">
-      <input type="date" required>
-      <br>
-      <input type="submit" value="search">
-    </form>
-
-    <!-- next before, search, create and dot btns -->
-    <div id="my-letters" class="toggle-display">
-      <button><input type="checkbox" name="myletters"></button>
-      <br>
-      <p for="myletters">sent</p>
-    </div>
-    <button id="next" class="toggle-display"><img
-        src="/images/baseline_navigate_next_black_18dp.png" alt=""></button>
-    <button id="before" class="toggle-display"><img
-        src="/images/baseline_navigate_before_black_18dp.png" alt=""></button>
-    <button id="search-dialog-btn" class="toggle-display"><img
-        src="/images/baseline_search_black_18dp2.png" alt=""></button>
-    <button id="create-dialog-btn" class="toggle-display"><img
-        src="/images/baseline_create_black_18dp2.png" alt=""></button>
-    <button class="button-dot"></button>
-
-  </div>
-  <script src="/scripts/index.js" type="module"></script>
-  <script src="/scripts/pwa.js"></script>
-</body>
-
+    <script src="/scripts/index.js" type="module"></script>
+    <script src="/scripts/pwa.js"></script>
+  </body>
 </html>

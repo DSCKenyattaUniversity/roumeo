@@ -1,19 +1,19 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 const router = express.Router();
 
 // mongoose model
-const Letter = require('./models');
+const Letter = require("./models");
 
-// base ural route 
-router.get('/', async (req, res) => {
-  await res.sendFile(path.join(__dirname, 'public/index.html'));
+// base ural route
+router.get("/", async (req, res) => {
+  await res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-// get all letters route 
-router.get('/letters/:from', async (req, res) => {
+// get all letters route
+router.get("/letters/:from", async (req, res) => {
   await Letter.find({}, (err, letters) => {
-    const filterdLetters = letters.filter(letter => {
+    const filterdLetters = letters.filter((letter) => {
       return letter.to === req.params.from;
     });
     res.status(200).json(filterdLetters);
@@ -25,10 +25,10 @@ router.get('/letters/:from', async (req, res) => {
 });
 
 // get letters iv written
-router.get('/mypen/:secret', async (req, res) => {
+router.get("/mypen/:secret", async (req, res) => {
   console.log(req.params.secret);
   await Letter.find({}, (err, letters) => {
-    const filterdLetters = letters.filter(letter => {
+    const filterdLetters = letters.filter((letter) => {
       return letter.secret === req.params.secret;
     });
     res.status(200).json(filterdLetters);
@@ -39,7 +39,7 @@ router.get('/mypen/:secret', async (req, res) => {
   });
 });
 // post route
-router.post('/send', async (reg, res) => {
+router.post("/send", async (reg, res) => {
   const { letter, timeStamp, from, to, secret } = reg.body;
 
   const newLetter = new Letter({
@@ -47,15 +47,16 @@ router.post('/send', async (reg, res) => {
     timeStamp,
     from,
     to,
-    secret
+    secret,
   });
 
-  await newLetter.save()
+  await newLetter
+    .save()
     .then(() => {
       res.status(201);
-      res.redirect('/');
+      res.redirect("/");
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
     });
 });

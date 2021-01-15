@@ -1,13 +1,13 @@
-const express = require('express');
-const path = require('path');
-const mongoose = require('mongoose');
-const letters = require('./src/routes');
+const express = require("express");
+const path = require("path");
+const mongoose = require("mongoose");
+const letters = require("./src/routes");
 
 (function server1() {
   // express instance
   const app = express();
 
-  // connect to db 
+  // connect to db
   (async function connect() {
     await mongoose.connect(
       process.env.DATABASE_URL || "mongodb://localhost:27017/roumeo",
@@ -16,29 +16,33 @@ const letters = require('./src/routes');
         useUnifiedTopology: true,
       }
     );
-  }());
+  })();
 
   // event listener for mongoose connection
-  mongoose.connection.once('open', () => {
-    console.log('connected to romeo db!');
-  }).on('error', (error) => {
-    console.log('connection error !! ', error);
-  })
+  mongoose.connection
+    .once("open", () => {
+      console.log("connected to romeo db!");
+    })
+    .on("error", (error) => {
+      console.log("connection error !! ", error);
+    });
 
   // const httpPort = 8085;
-  let port = process.env.PORT;      // eslint-disable-next-line no-console
+  let port = process.env.PORT; // eslint-disable-next-line no-console
   if (port == null || port == "") {
     port = 8000;
   }
 
-  // static folder 
-  app.use(express.static(path.join(__dirname, 'public')));
+  // static folder
+  app.use(express.static(path.join(__dirname, "public")));
 
   // body parser
   app.use(express.json());
-  app.use(express.urlencoded({
-    extended: false
-  }));
+  app.use(
+    express.urlencoded({
+      extended: false,
+    })
+  );
 
   // Logging for each request middle ware
   app.use((req, resp, next) => {
@@ -51,10 +55,10 @@ const letters = require('./src/routes');
   });
 
   // routes
-  app.use('/', letters);
+  app.use("/", letters);
 
   // app start
   app.listen(port, function () {
     console.log(`Listening on port ${port}!`);
   });
-}());
+})();

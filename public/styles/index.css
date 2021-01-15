@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Marck+Script&family=Tangerine&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Marck+Script&family=Parisienne&family=Tangerine&display=swap");
 
+/* reset */
 * {
   box-sizing: border-box;
   margin: 0 auto;
@@ -10,22 +11,17 @@
   outline: none;
 }
 
+body {
+  background-color: #d3d1d2;
+}
+
 html,
 body {
   overflow: hidden;
 }
 
-body {
-  background-color: #d3d1d2;
-}
-
 #text-area:first-line {
   font-weight: bold;
-}
-
-.container {
-  width: 95%;
-  margin: 0 auto;
 }
 
 #text-area {
@@ -38,12 +34,10 @@ body {
   text-indent: 20px;
   height: 90vh;
   text-align-last: left;
-  /* font-family: 'Architects Daughter', cursive; */
+  padding: 2rem 1rem 0 1rem;
   font-family: "Marck Script", cursive;
+  /* font-family: 'Architects Daughter', cursive; */
   /* font-family: 'Tangerine', cursive; */
-  /* font-family: 'Tangerine', cursive; */
-  padding: 0 1rem 0 1rem;
-  padding-top: 2rem;
 }
 
 .toggle-display {
@@ -79,6 +73,15 @@ body {
   z-index: 2;
 }
 
+.button-dot:hover,
+#my-letters:hover,
+#before:hover,
+#next:hover,
+#search-dialog-btn:hover,
+#create-dialog-btn:hover {
+  cursor: pointer;
+}
+
 #my-letters {
   padding: 0;
   top: 5vh;
@@ -89,6 +92,7 @@ body {
   border-radius: unset;
 }
 
+/* toggle to view sent letters */
 #my-letters input {
   width: 30px;
   height: 30px;
@@ -122,14 +126,13 @@ body {
   top: 40vh;
 }
 
-/* form sections */
+/* send letter form sections */
 #send-letter-form {
   position: absolute;
   top: 7vh;
   left: 5%;
   height: 93vh;
   width: 90%;
-  /* border: solid 5px black; */
   overflow: hidden;
 }
 
@@ -186,6 +189,7 @@ body {
   padding: 5px 14px;
 }
 
+/* to and register  */
 #to,
 #register-section {
   position: fixed;
@@ -195,10 +199,9 @@ body {
   background-color: #d3d1d2;
   width: 100%;
   z-index: 4;
-  background-image: url('/images/pencil-152713_1280.png');
+  background-image: url("/images/pencil-152713_1280.png");
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 #to form input,
@@ -224,6 +227,11 @@ body {
   width: 8rem;
 }
 
+#to form input[type="submit"]:hover,
+#register-section input[type="submit"]:hover {
+  cursor: pointer;
+}
+
 #register-section button {
   position: fixed;
   left: 0;
@@ -241,12 +249,7 @@ body {
   cursor: pointer;
 }
 
-/* #to form {
-  text-align: center;
-  align-content: center;
-  justify-content: center;
-} */
-
+/* responsive media queries */
 @media screen and (min-width: 830px) {
   .main-container {
     width: 65%;
