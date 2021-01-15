@@ -25,6 +25,7 @@ const secret = document.querySelector("#secret-input");
 window.addEventListener("DOMContentLoaded", () => {
   // toggle view letters
   let viewSentLetter = false;
+  
   // session user hundler
   if (sessionStorage.getItem(localStorage.from)) {
     registerWindow.style.display = "none";

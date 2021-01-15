@@ -5,7 +5,7 @@ const router = express.Router();
 // mongoose model
 const Letter = require("./models");
 
-// base ural route
+// base url route
 router.get("/", async (req, res) => {
   await res.sendFile(path.join(__dirname, "public/index.html"));
 });
@@ -24,7 +24,7 @@ router.get("/letters/:from", async (req, res) => {
   });
 });
 
-// get letters iv written
+// get letters from me
 router.get("/mypen/:secret", async (req, res) => {
   console.log(req.params.secret);
   await Letter.find({}, (err, letters) => {

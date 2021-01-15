@@ -27,7 +27,7 @@ const letters = require("./src/routes");
       console.log("connection error !! ", error);
     });
 
-  // const httpPort = 8085;
+  // port
   let port = process.env.PORT; // eslint-disable-next-line no-console
   if (port == null || port == "") {
     port = 8000;
