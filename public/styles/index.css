@@ -258,6 +258,10 @@ body {
   #register-section input {
     width: 30%;
   }
+  #register-section {
+    background-position-x: 10vw;
+    background-size: auto 50vw;
+  }
 
   #send-letter-form {
     left: 15%;
