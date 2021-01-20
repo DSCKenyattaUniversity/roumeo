@@ -58,6 +58,7 @@ body {
   z-index: 2;
 }
 
+#btn-install,
 #my-letters,
 #before,
 #next,
@@ -80,6 +81,19 @@ body {
 #search-dialog-btn:hover,
 #create-dialog-btn:hover {
   cursor: pointer;
+}
+
+#btn-install {
+  font-size: 33px;
+  display: none;
+  right: 0.3em;
+  color: green;
+}
+
+#btn-install:hover {
+  cursor: pointer;
+  font-size: 44px;
+  transition: 0.5s;
 }
 
 #my-letters {
