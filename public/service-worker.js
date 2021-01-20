@@ -24,6 +24,7 @@ const toCache = [
   "/images/pencil-152713_1280.png",
 ];
 
+// register service worker
 self.addEventListener("install", function (event) {
   console.log("used to register the service worker");
   event.waitUntil(
@@ -36,6 +37,25 @@ self.addEventListener("install", function (event) {
   );
 });
 
+// on network responce
+self.addEventListener("fetch", function (event) {
+  console.log("on network response");
+  event.respondWith(
+    caches.open(CACHE_NAME).then(function (cache) {
+      return cache.match(event.request).then(function (response) {
+        return (
+          response ||
+          fetch(event.request).then(function (response) {
+            cache.put(event.request, response.clone());
+            return response;
+          })
+        );
+      });
+    })
+  );
+});
+
+// network first strategy
 self.addEventListener("fetch", function (event) {
   console.log(
     "used to intercept requests so we can check for the file or data in the cache"
@@ -49,6 +69,7 @@ self.addEventListener("fetch", function (event) {
   );
 });
 
+// delete old cache
 self.addEventListener("activate", function (event) {
   console.log("this event triggers when the service worker activates");
   event.waitUntil(

@@ -25,7 +25,7 @@ const secret = document.querySelector("#secret-input");
 window.addEventListener("DOMContentLoaded", () => {
   // toggle view letters
   let viewSentLetter = false;
-  
+
   // session user hundler
   if (sessionStorage.getItem(localStorage.from)) {
     registerWindow.style.display = "none";
@@ -50,18 +50,6 @@ window.addEventListener("DOMContentLoaded", () => {
       localStorage.from = registerInput.value;
       localStorage.secret = secret.value;
     });
-  }
-
-  // catch API requests
-  if (navigator.onLine) {
-    (async function cacheRequests() {
-      await caches.open("CACHE-7").then(function (cache) {
-        return cache.addAll([
-          `/letters/${localStorage.from}`,
-          `/mypen/${localStorage.secret}`,
-        ]);
-      });
-    })();
   }
 
   // get all my letters
@@ -215,3 +203,15 @@ sendLetterForm.addEventListener("submit", (e) => {
     window.alert("you are offline cant reach romeo/juliet");
   }
 });
+
+// // catch API requests
+//   if (navigator.onLine) {
+//     (async function cacheRequests() {
+//       await caches.open("CACHE-7").then(function (cache) {
+//         return cache.addAll([
+//           `/letters/${localStorage.from}`,
+//           `/mypen/${localStorage.secret}`,
+//         ]);
+//       });
+//     })();
+//   }
