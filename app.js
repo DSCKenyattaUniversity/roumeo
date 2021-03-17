@@ -3,7 +3,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const letters = require("./src/routes");
 
-(function server1() {
+(function server() {
   // express instance
   const app = express();
 
